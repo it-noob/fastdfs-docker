@@ -40,6 +40,8 @@ storage group2 129/130
 
 # problem
 
-如上为 docke 官方文档里相关描述，通过查看 fastdfs 相关资料，docker 的集群环境搭建，由于 storage 的端口在组内配置，只有一个，因此不可以在一台宿主机的 docker 环境里模拟集群，在多台机器的测试中发现，Mac 和 Win 的host网络不神效，查阅官方文档发现如下。目前遗留问题，使用 port 映射端口的情况下，tracker 拿到的 storage 地址是 docker 容器的内网地址
+通过查看 fastdfs 相关资料，docker 的集群环境搭建，由于 storage 的端口在组内配置，只有一个，因此不可以在一台宿主机的 docker 环境里模拟集群，在多台机器的测试中发现，Mac 和 Win 的host网络不生效，查阅官方文档发现如下。目前遗留问题，使用 port 映射端口的情况下，tracker 拿到的 storage 地址是 docker 容器的内网地址
 
 The host networking driver only works on Linux hosts, and is not supported on Docker Desktop for Mac, Docker Desktop for Windows, or Docker EE for Windows Server.
+
+详情，可以点击此处[查看](https://docs.docker.com/network/network-tutorial-host/)
